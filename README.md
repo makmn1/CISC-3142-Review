@@ -31,6 +31,9 @@ in the code.
 through the class itself and inherited classes. 
 - Private members can only be accessed through the class/struct itself.
 
+To access data members of a class or struct instance in C++, we use dot 
+notation or arrow notation to access the member through a pointer.
+
 ### Default Arguments
 Any function can take in default arguments, but default arguments must
 be the last ones to be defined in the function parameter list.
@@ -49,4 +52,31 @@ program based on a directive given inside the user's program.
 
 ### File scope
 The scope in which files can be referenced. In C++, files can only 
-reference other files when they are included. This causes 
+reference other files when they are included. This causes the files to
+be bought into the current file's scope, and allows any data members from 
+that file to be used (as long as their declarations and definitions are
+linked properly).
+
+### Function Members & Function Member Definitions
+Function members are functions within classes that can be defined within 
+the class definition, but they can also just be declared and then defined 
+elsewhere. When defining it elsewhere, you need to use the scope resolution 
+operator linking the class to the definition. The scope resolution operator used 
+in both Player and Character cpp files looks like:
+
+`Player::getHealth()`
+
+### Function Scope
+Functions have their own scope where any variables defined in a function 
+body cannot be accessed anywhere outside the function (unless a reference to
+those values are returned).
+
+### Inheritance in C++
+The idea of passing along values from one class to the next. Inheritance 
+is based on the object-oriented programming paradigm where the idea is similar 
+to real life in that some objects are subsets of a greater object.
+For example, a Player is a Character, but there can be many types 
+of characters. So we can say that a Player inherits the attributes of a 
+Character while having its own attributes that make it unique. An
+example of this is seen between the Player and Character class.
+
